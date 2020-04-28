@@ -1,26 +1,26 @@
 import numpy as np
 import datetime
+
 # specify date to look at, defaults to today
 end_date = np.datetime64(datetime.datetime.today())
 # end_date = np.datetime64('2020-04-03')
 
 # number of days to average case and death numbers over
-n_days_window = 4
-
-# number of days after which an infected individual can be assumed to be not infectious
-# anectodally, about 3 weeks
-n_days_of_infection = 26
+n_days_window = 3
 
 # number of days between exposure and showing symptoms/becoming infectious
 n_days_for_incubation = 5
 
+# number of days after which an infected individual can be assumed to be not infectious
+# anectodally, about 3 weeks
+n_days_of_infection = n_days_for_incubation + 3*7
+
 # number of days from exposure to death (post-selected for those who die)
 # anecdotally about 10 days after showing symptoms
-n_days_to_death = 15
+n_days_to_death = n_days_for_incubation + 11
 
 # minimum number of cases a county must have over entire window to be included in the dataset
-min_num_cases = 100
-
+min_num_cases = 75
 
 
 import os
