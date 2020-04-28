@@ -30,7 +30,7 @@ def feature3(new_cases,new_deaths,
              cases,
              deaths,):
     return np.mean(np.log(population))
-# feature_list.append(feature3)
+feature_list.append(feature3)
 
 # proxy for fraction of population that is infected (should be somewhat robust to poor testing)
 def feature4(new_cases,new_deaths,
@@ -51,3 +51,13 @@ def feature5(new_cases,new_deaths,
              deaths,):
     return np.mean(deaths/population)
 feature_list.append(feature5)
+
+# proxy for fraction of population that is infected (should be somewhat robust to poor testing)
+def feature6(new_cases,new_deaths,
+             new_case_baseline,
+             new_death_baseline,
+             population,
+             cases,
+             deaths,):
+    return np(cases[-1]/population)
+feature_list.append(feature6)
