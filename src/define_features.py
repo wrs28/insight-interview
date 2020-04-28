@@ -59,5 +59,5 @@ def feature6(new_cases,new_deaths,
              population,
              cases,
              deaths,):
-    return np(cases[-1]/population)
+    return cases[-1]/population
 feature_list.append(feature6)
