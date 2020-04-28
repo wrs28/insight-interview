@@ -4,6 +4,10 @@
 
 ***Solution***: combine [COVID-19 dataset](https://github.com/nytimes/covid-19-data) from the New York Times's public repository, with US Census Bureau's most recent [(2018) estimate of population by county](https://www2.census.gov/programs-surveys/popest/datasets/2010-2018/counties/asrh/cc-est2018-alldata.csv). Build features, run Local Outlier Factor analysis.
 
+## Setup
+
+Need python 3, pandas, scikit-learn, numpy, csv, requests.
+
 ## Cleaning the Datasets
 
 ### NYT COVID-19 data
