@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 .DS_Store
 .ipynb_checkpoints*
 *.csv
 *pycache*
-=======
-*.csv
-.git
-.DS_Store
-*.ipynb_checkpoints*
->>>>>>> a9126887a0d74a21a485b0181190670405721ec4
