@@ -1,3 +1,3 @@
-[submodule "nyt"]
-	path = nyt
+[submodule "src/nyt"]
+	path = src/nyt
 	url = git@github.com:nytimes/covid-19-data.git
