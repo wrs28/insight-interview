@@ -1,3 +1,0 @@
-[submodule "src/nyt"]
-	path = src/nyt
-	url = https://github.com/nytimes/covid-19-data

@@ -6,7 +6,7 @@ end_date = np.datetime64(datetime.datetime.today())
 # end_date = np.datetime64('2020-04-03')
 
 # number of days to average case and death numbers over
-n_days_window = 3
+n_days_window = 4
 
 # number of days between exposure and showing symptoms/becoming infectious
 n_days_for_incubation = 5
@@ -20,7 +20,7 @@ n_days_of_infection = n_days_for_incubation + 3*7
 n_days_to_death = n_days_for_incubation + 11
 
 # minimum number of cases a county must have over entire window to be included in the dataset
-min_num_cases = 75
+min_num_cases = 100
 
 
 import os
@@ -162,8 +162,8 @@ y_pred_sorted = y_pred[perm]
 # print results
 print('%i anomalies detected, %2.2f%% counties that meet case threhold:\n' % (sum(y_pred==-1),100*sum(y_pred==-1)/len(counties)))
 
-print('%5s %20s %20s %20s %20s %20s %20s %20s\n' % ('SCORE','STATE','COUNTY','CASES','DEATHS','POPULATION','INFECTION RATE','DEATH RATE'))
+print('%5s %20s %20s %20s %20s %20s %20s %20s\n' % ('SCORE','STATE','COUNTY','CASES','DEATHS','POPULATION','INF RATE','INF RATE PER CAP (PPM)'))
 for p in range(len(y_pred_sorted)):
     if y_pred_sorted[p]==-1:
-        print('%5.2f %20s %20s %20i %20i %20i %20.4f %20.4f' % (-scores_sorted[p], states_sorted[p], counties_sorted[p], Cases[perm[p]], Deaths[perm[p]], Population[perm[p]], X[perm[p],0], X[perm[p],1]))
+        print('%5.2f %20s %20s %20i %20i %20i %20.4f %20.4f' % (-scores_sorted[p], states_sorted[p], counties_sorted[p], Cases[perm[p]], Deaths[perm[p]], Population[perm[p]], X[perm[p],0], 1000000*X[perm[p],2]))
 print()
